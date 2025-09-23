@@ -32,7 +32,7 @@ def cursos(request):
 
 def profesores(request):
     profesores = Profesor.objects.all()
-    return render(request, '',{'profesores': profesores})
+    return render(request, 'myapp/profesores.html', {'profesores': profesores})
 
 
 def entregables(request):

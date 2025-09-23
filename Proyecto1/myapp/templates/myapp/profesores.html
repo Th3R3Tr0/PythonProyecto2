@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Página de Profesores{% endblock %}
+
+{% block content %}
+    <h1>Lista de Profesores</h1>
+    <ul>
+        {% for profesor in profesores %}
+            <li>{{ profesor.nombre }} {{ profesor.apellido }} - {{ profesor.profesion }}</li>
+        {% empty %}
+            <li>No hay profesores registrados.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
