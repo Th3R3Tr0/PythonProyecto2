@@ -1,2 +1,3 @@
 # PythonProyecto2
-Nuevo Proyecto Python
+
+Alumnos: Diez Ignacio - Morales Matias - Penayo Enrique - Sanchez Agostina
