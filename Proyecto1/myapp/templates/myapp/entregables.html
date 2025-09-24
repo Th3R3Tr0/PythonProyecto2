@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}  Lista de Entregados {% endblock %}
+{% block content %}
+ <div class="container mt-4">
+        <h1 class="text-center mb-4">Trabajos Entregados</h1>
+
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle shadow-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Fecha de Entrega</th>
+                        <th scope="col">Entregado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entregable in entregables %}
+{% endblock %}

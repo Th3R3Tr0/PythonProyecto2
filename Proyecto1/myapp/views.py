@@ -37,4 +37,4 @@ def profesores(request):
 
 def entregables(request):
     entregables = Entregable.objects.all()
-    return render(request, '',{'entregables': entregables})
+    return render(request, 'myapp/entregables.html',{'entregables': entregables})

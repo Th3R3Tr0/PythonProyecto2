@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Estudiantes</title>
-</head>
-<body>
-    <h1>Lista de Estudiantes</h1>
-    <ul>
-        {% for estudiante in estudiantes %}
-            <li>{{ estudiante.nombre }} {{ estudiante.apellido }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Lista de Estudiantes{% endblock %}
+{% block content %}
+<h1 class="text-center mb-4">Lista de Estudiantes </h1>
+    {% for estudiante in estudiantes %}
+        <li>{{ estudiante.nombre }} {{ estudiante.apellido }}</li>
+    {% endfor %}
+{% endblock %}
