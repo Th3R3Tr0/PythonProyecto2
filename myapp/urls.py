@@ -13,5 +13,9 @@ urlpatterns = [
     #path('cursoFormulario/', views.cursoFormulario, name='cursoFormulario'),
     path('profesor_formulario/', views.profesorFormulario, name='profesorFormulario'),
     path('profesor/editar/<int:id>/', views.profesor_editar, name='profesorEditar'),
-    path('profesor/eliminar/<int:id>/', views.profesor_eliminar, name='profesorEliminar')
+    path('profesor/eliminar/<int:id>/', views.profesor_eliminar, name='profesorEliminar'),
+    path('registro/', views.registro_usuario, name='registro'),
+    path('estudiante_formulario/', views.estudianteFormulario, name='estudianteFormulario'),
+    path('estudiante/editar/<int:id>/', views.estudiante_editar, name='estudianteEditar'),
+    path('estudiante/eliminar/<int:id>/', views.estudiante_eliminar, name='estudianteEliminar'),
 ]

@@ -1,8 +1,55 @@
 {% extends 'base.html' %}
-{% block title %}Lista de Estudiantes{% endblock %}
+{% block title %} Lista de Alumnos {% endblock %}
 {% block content %}
-<h1 class="text-center mb-4">Lista de Estudiantes </h1>
-    {% for estudiante in estudiantes %}
-        <li>{{ estudiante.nombre }} {{ estudiante.apellido }}</li>
-    {% endfor %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Lista de Alumnos</h1>
+
+
+    <!-- Botón para agregar -->
+    <div class="text-end mb-4">
+        <a class="btn btn-secondary" href="{% url 'myapp:estudianteFormulario' %}">Agregar Alumno</a>
+    </div>
+
+
+    <!-- 🔍 Formulario de búsqueda -->
+    <form method="get" action="{% url 'myapp:estudiantes' %}" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Buscar por nombre o apellido"
+                value="{{ query|default_if_none:'' }}">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-search"></i> Buscar
+            </button>
+        </div>
+    </form>
+
+
+    <!-- Resultados -->
+    <div class="row">
+        {% for estudiante in estudiantes %}
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">
+                        {{ estudiante.apellido }} {{ estudiante.nombre }}
+                    </h5>
+                    <p class="card-text mb-1">
+                        <strong>Email:</strong> {{ estudiante.email }}
+                    </p>
+                    
+                </div>
+                    <div class="card-footer text-center bg-dark navbar-dark">
+                <a href="{% url 'myapp:estudianteEditar' estudiante.id %}" class="btn btn-outline-warning">Editar</a>
+                <a href="{% url 'myapp:estudianteEliminar' estudiante.id %}"
+                class="btn btn-outline-danger"
+                onclick="return confirm('¿Seguro que deseas eliminar a {{ estudiante.nombre }} {{ estudiante.apellido }}?')">
+                Eliminar
+                </a>
+            </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-muted text-center">No hay alumnos registrados.</p>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

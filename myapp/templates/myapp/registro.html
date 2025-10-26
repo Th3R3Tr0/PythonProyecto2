@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm p-4 rounded-4 animate__animated animate__fadeInUp animate__slower">
+                <h2 class="text-center mb-4">Crear cuenta</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="text-start">
+                        {{ form.as_p }}
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3 animate__animated animate__pulse animate__delay-2s">
+                        Registrarse
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
