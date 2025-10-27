@@ -91,7 +91,7 @@ def estudiante_eliminar(request, id):
     estudiante.delete()
     return redirect('myapp:estudiantes')  # vuelve a la lista de estudiantes
 
-def profesorFormulario(request):
+def profesorFormulario(request):    
     if request.method == 'POST':
         form = ProfesorFormulario(request.POST)
         if form.is_valid():
